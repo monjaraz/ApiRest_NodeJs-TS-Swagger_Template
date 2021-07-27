@@ -1,5 +1,6 @@
 import express from 'express';
-import controller from '../controllers/sample';
+import { sampleHealthCheck } from '../controllers/sample';
+import { checkOrigin } from '../middleware/sample';
 
 const router = express.Router();
 
@@ -15,6 +16,11 @@ const router = express.Router();
  *                  application/json:
  *                      schema:
  */
-router.get('/ping', controller.sampleHealthCheck);
+router.get('/ping', checkOrigin, sampleHealthCheck);
+router.get('/');
+router.get('/:id');
+router.post('/');
+router.patch('/:id');
+router.delete('/:id');
 
-export default router;
+export = router;

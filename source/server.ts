@@ -3,7 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import logging from './config/logging';
 import config from './config/config';
-import sampleRoutes from './routes/sample';
+// import sampleRoutes from './routes/sample';
 import cors from 'cors';
 import morgan from 'morgan';
 /**swagtger */
@@ -46,8 +46,8 @@ app.use((req, res, next) => {
 const specs = swaggerJSDoc(options);
 
 /** Routes */
-app.use('/sample', sampleRoutes);
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.use('/api/1.0', require('./routes'));
+app.use('/api/1.0/docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 /** Error Handling */
 app.use((req, res, next) => {
