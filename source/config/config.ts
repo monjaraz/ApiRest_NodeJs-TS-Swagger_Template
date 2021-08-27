@@ -23,10 +23,15 @@ const TOKEN = {
     options: { algorithm: 'HS256', keyid: '1', noTimestamp: false, expiresIn: '1min', notBefore: '2s' }
 };
 
+const APP = {
+    ver: '1.0'
+};
+
 const config = {
     server: SERVER,
     token: TOKEN,
-    user: USER
+    user: USER,
+    app: APP
 };
 
 export default config;

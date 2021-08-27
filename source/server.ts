@@ -46,8 +46,8 @@ app.use((req, res, next) => {
 const specs = swaggerJSDoc(options);
 
 /** Routes */
-app.use('/api/fbm/1.0', require('./routes'));
-app.use('/api/fbm/1.0/docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.use('/' + config.app.ver, require('./routes'));
+app.use('/' + config.app.ver + '/docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 /** Error Handling */
 app.use((req, res, next) => {
