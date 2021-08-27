@@ -1,5 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
+import config from '../config/config';
 import logging from '../config/logging';
+// import auth from './auth';
 
 const NAMESPACE = 'Sample Middleware';
 const checkOrigin = (req: Request, res: Response, next: NextFunction) => {
