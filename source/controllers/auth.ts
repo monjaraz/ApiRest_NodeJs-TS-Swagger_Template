@@ -49,7 +49,7 @@ class AuthController {
         result.status = false;
         result.message = 'Usuario y/o contraseña incorrectos';
         result.response = null;
-        res.status(400).send(result);
+        res.status(200).send(result);
     }
     async createJWT(req: Request, res: Response) {
         try {
@@ -69,7 +69,7 @@ class AuthController {
             result.status = false;
             result.message = 'createJWT error: %O' + err;
             result.response = null;
-            return res.status(500).send(result);
+            return res.status(200).send(result);
         }
     }
 }
